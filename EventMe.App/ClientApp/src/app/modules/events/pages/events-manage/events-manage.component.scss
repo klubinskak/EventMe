@@ -1,0 +1,24 @@
+.p-tabmenu{
+    background-color: transparent !important;
+}
+.p-tabmenu-nav{
+    background-color: transparent !important;
+}
+
+.p-tabmenuitem	{
+    background-color: transparent !important;
+}
+
+::ng-deep .p-tabmenu {
+    background-color: transparent !important;
+    border: none; /* Optional: remove the border */
+  }
+  
+  ::ng-deep .p-tabmenu .p-tabmenu-nav {
+    background-color: transparent !important;
+  }
+  
+  ::ng-deep .p-tabmenu .p-tabmenu-nav li a {
+    background-color: transparent !important;
+  }
+  

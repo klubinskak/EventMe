@@ -1,0 +1,54 @@
+<div class="card h-full">
+    <p-table #dt1 [value]="events" [globalFilterFields]="['name', 'country.name', 'representative.name', 'status']"
+        selectionMode="single" [(selection)]="selectedEvent" dataKey="id" [tableStyle]="{ 'min-width': '50rem' }"
+        [rows]="5" [paginator]="true" stateStorage="session" stateKey="statedemo-session">
+        <ng-template pTemplate="caption">
+            <p-iconField iconPosition="left">
+                <p-inputIcon>
+                    <i class="pi pi-search"></i>
+                </p-inputIcon>
+                <input pInputText type="text" (input)="dt1.filterGlobal($event.target.value, 'contains')"
+                    placeholder="Global Search" />
+            </p-iconField>
+        </ng-template>
+        <ng-template pTemplate="header">
+            <tr>
+                <th class="w-2"></th>
+                <th pSortableColumn="name" style="width:25%">
+                    Name <p-sortIcon field="name" />
+                </th>
+                <th pSortableColumn="date" style="width:25%">
+                    Date <p-sortIcon field="date" />
+                </th>
+                <th pSortableColumn="location" style="width:25%">
+                    Location <p-sortIcon field="location" />
+                </th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-event>
+            <tr [pSelectableRow]="event">
+                <td>
+                    <p-button label="View" [outlined]="true" severity="secondary" (onClick)="buttonClick()"
+                        [routerLink]="[event.id]" />
+                </td>
+                <td>
+                    <span class="p-column-title">Name</span>
+                    {{ event.name }}
+                </td>
+                <td>
+                    <span class="p-column-title">Date</span>
+                    <span class="ml-1 vertical-align-middle">{{ event.date | date:'medium' }}</span>
+                </td>
+                <td>
+                    <span class="p-column-title">Location</span>
+                    <span class="ml-1 vertical-align-middle">{{ event.locationName }}</span>
+                </td>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="emptymessage">
+            <tr>
+                <td colspan="4">No events found.</td>
+            </tr>
+        </ng-template>
+    </p-table>
+</div>

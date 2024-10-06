@@ -1,0 +1,22 @@
+/* Custom styles for the PrimeNG calendar popup */
+.p-datepicker {
+    width: 250px !important;  /* Adjust width as needed */
+    font-size: 0.875rem;       /* Smaller font for the calendar */
+  }
+  
+  .p-datepicker table {
+    width: 100%;               /* Ensure table inside the calendar fits the new width */
+  }
+  
+  .p-datepicker-time-panel {
+    width: 100% !important;    /* Ensure the time panel is responsive */
+  }
+  
+  .p-datepicker-header {
+    font-size: 0.875rem;       /* Adjust font size for the header (months/years) */
+  }
+  
+  .p-datepicker-calendar td {
+    padding: 0.5rem !important; /* Reduce padding around the day numbers */
+  }
+  

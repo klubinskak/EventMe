@@ -1,0 +1,14 @@
+C:\Users\Klaudia\Desktop\Event.me\Event.me\Event.me.Data\bin\Debug\net6.0\Event.me.Data.deps.json
+C:\Users\Klaudia\Desktop\Event.me\Event.me\Event.me.Data\bin\Debug\net6.0\Event.me.Data.runtimeconfig.json
+C:\Users\Klaudia\Desktop\Event.me\Event.me\Event.me.Data\bin\Debug\net6.0\Event.me.Data.dll
+C:\Users\Klaudia\Desktop\Event.me\Event.me\Event.me.Data\bin\Debug\net6.0\Event.me.Data.pdb
+C:\Users\Klaudia\Desktop\Event.me\Event.me\Event.me.Data\obj\Debug\net6.0\Event.me.Data.csproj.AssemblyReference.cache
+C:\Users\Klaudia\Desktop\Event.me\Event.me\Event.me.Data\obj\Debug\net6.0\Event.me.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Klaudia\Desktop\Event.me\Event.me\Event.me.Data\obj\Debug\net6.0\Event.me.Data.AssemblyInfoInputs.cache
+C:\Users\Klaudia\Desktop\Event.me\Event.me\Event.me.Data\obj\Debug\net6.0\Event.me.Data.AssemblyInfo.cs
+C:\Users\Klaudia\Desktop\Event.me\Event.me\Event.me.Data\obj\Debug\net6.0\Event.me.Data.csproj.CoreCompileInputs.cache
+C:\Users\Klaudia\Desktop\Event.me\Event.me\Event.me.Data\obj\Debug\net6.0\Event.me.Data.dll
+C:\Users\Klaudia\Desktop\Event.me\Event.me\Event.me.Data\obj\Debug\net6.0\refint\Event.me.Data.dll
+C:\Users\Klaudia\Desktop\Event.me\Event.me\Event.me.Data\obj\Debug\net6.0\Event.me.Data.pdb
+C:\Users\Klaudia\Desktop\Event.me\Event.me\Event.me.Data\obj\Debug\net6.0\Event.me.Data.genruntimeconfig.cache
+C:\Users\Klaudia\Desktop\Event.me\Event.me\Event.me.Data\obj\Debug\net6.0\ref\Event.me.Data.dll

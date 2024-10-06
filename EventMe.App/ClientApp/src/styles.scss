@@ -1,0 +1,64 @@
+@import "primeicons/primeicons.css";
+@import "primeng/resources/themes/lara-dark-blue/theme.css";
+@import "primeng/resources/primeng.css";
+
+* {
+  font-family: "Lato", sans-serif;
+
+}
+body {
+  background-color: #374151;
+}
+
+.p-sidebar {
+  background-color: #374151 !important; /* Dark sidebar */
+  color: #374151 !important; /* White text */
+}
+.p-sidebar a {
+  color: #ffffff !important; /* Default text color */
+  text-decoration: none; /* Remove underline from links */
+}
+.p-sidebar ul {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* On hover, change background and text color */
+.p-sidebar a:hover {
+  background-color: #4b5563 !important; /* Lighter background on hover */
+  color: #778da9 !important; /* Text color on hover */
+}
+
+.p-datatable {
+  background-color: #f5f5f5 !important; /* Table background color */
+}
+.p-datatable-header {
+  background-color: #374151 !important; /* Dark background for header */
+  color: #ffffff !important; /* White text for header */
+}
+
+.p-datatable-header th {
+  background-color: #4b5563 !important; /* Darker background for header cells */
+  color: #ffffff !important; /* White text color for header cells */
+}
+
+.p-datatable-thead > tr > th {
+  background-color: #374151 !important; /* Header background color */
+  color: #ffffff !important; /* Header text color */
+}
+
+.p-datatable-tbody > tr > td {
+  background-color: #374151 !important; /* Row background color */
+  color: white !important; /* Text color */
+}
+
+.p-datatable-tbody > tr:nth-child(even) {
+  background-color: #eeeeee !important; /* Alternating row color */
+}
+.p-paginator {
+  background-color: #374151 !important; /* Dark background for pagination */
+  color: #ffffff !important; /* Text color */
+}

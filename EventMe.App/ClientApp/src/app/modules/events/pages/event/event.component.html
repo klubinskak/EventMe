@@ -1,0 +1,158 @@
+<ng-container>
+  <form [formGroup]="fgComponent" class="pt-3">
+    <p-card>
+      <div class="ml-3 flex align-items-center gap-3">
+        <i class="pi pi-pen-to-square"></i>
+        <p class="font-light text-xl font-bold">Create New Event</p>
+      </div>
+      <div class="card" style="max-height: 600px; overflow-y: auto; overflow-x: hidden">
+        <!-- Set height and enable scrolling -->
+        <div class="grid pt-4 gap-2 mx-4">
+          <!-- Event Name -->
+          <div class="col-12 md:col-4">
+            <p-floatLabel>
+              <label for="username">Event Name</label>
+              <input pInputText class="w-full p-inputtext-sm" id="username" formControlName="eventName" />
+            </p-floatLabel>
+            <small *ngIf="
+                fgComponent.get('eventName')?.invalid &&
+                fgComponent.get('eventName')?.touched
+              ">
+              This field is required.
+            </small>
+          </div>
+
+          <!-- Event Date -->
+          <div class="col-12 md:col-2">
+            <p-floatLabel>
+              <p-calendar inputId="calendar-12h" appendTo="body" [style]="{ width: '100%' }" formControlName="eventDate"
+                [showTime]="true" [hourFormat]="12" class="p-inputtext-sm"></p-calendar>
+              <label for="calendar-12h">Event Date</label>
+            </p-floatLabel>
+          </div>
+
+          <!-- Event Timezone -->
+          <div class="col-12 md:col-2">
+            <p-floatLabel>
+              <p-dropdown [options]="timeZoneOpts" formControlName="eventTimeZone" [style]="{ width: '100%' }"
+                placeholder="Select Time Zone" class="w-full p-inputtext-sm"></p-dropdown>
+              <label for="eventTimeZone">Time Zone</label>
+            </p-floatLabel>
+          </div>
+
+          <!-- Event Location -->
+          <div class="col-12 md:col-3">
+            <p-dropdown [options]="citiesOpts" [style]="{ width: '100%' }" class="w-full p-inputtext-sm"
+              optionLabel="city" [filter]="true" filterBy="city" [showClear]="true" placeholder="City">
+              <ng-template pTemplate="selectedItem" let-cities>
+                <div class="flex align-items-center gap-2">
+                  <div>{{ cities.value }}</div>
+                </div>
+              </ng-template>
+              <ng-template let-country pTemplate="item">
+                <div class="flex align-items-center gap-2">
+                  <img src="https://primefaces.org/cdn/primeng/images/demo/flag/flag_placeholder.png"
+                    [class]="'flag flag-' + country.code.toLowerCase()" style="width: 18px" />
+                  <div>{{ country.name }}</div>
+                </div>
+              </ng-template>
+            </p-dropdown>
+          </div>
+
+          <!-- Event Type  -->
+          <div class="col-12 md:col-3">
+            <p-floatLabel>
+              <p-dropdown [style]="{ width: '100%' }" [options]="eventTypeOpts" formControlName="eventTypeId"
+                optionLabel="eventType" class="w-full p-inputtext-sm" inputId="float-label-event-type"></p-dropdown>
+              <label for="float-label-event-type">Event Type</label>
+            </p-floatLabel>
+            <small *ngIf="
+                fgComponent.get('eventTypeId')?.invalid &&
+                fgComponent.get('eventTypeId')?.touched
+              ">
+              This field is required.
+            </small>
+          </div>
+
+          <!-- Event Max Attendees -->
+          <div class="col-12 md:col-3">
+            <p-floatLabel>
+              <input type="number" pInputText id="maxAttendees" formControlName="maxAttendees"
+                class="w-full p-inputtext-sm" min="0" />
+              <label for="maxAttendees">Maximum Attendees</label>
+            </p-floatLabel>
+          </div>
+
+          <!-- Event Duration -->
+          <div class="col-12 md:col-2">
+            <p-floatLabel>
+              <input type="number" pInputText id="eventDuration" formControlName="eventDuration"
+                class="w-full p-inputtext-sm" min="0" />
+              <label for="eventDuration">Event Duration (hours)</label>
+            </p-floatLabel>
+          </div>
+
+          <!-- Event Category -->
+          <div class="col-12 md:col-3">
+            <p-floatLabel>
+              <p-dropdown [style]="{ width: '100%' }" [options]="eventCategoryOpts" formControlName="eventCategory"
+                class="w-full p-inputtext-sm" placeholder="Event Category"></p-dropdown>
+              <label for="eventCategory">Event Category</label>
+            </p-floatLabel>
+          </div>
+
+          <!-- Event Website -->
+          <div class="col-12 md:col-4">
+            <p-floatLabel>
+              <input pInputText type="url" id="eventLink" formControlName="eventLink" class="w-full p-inputtext-sm"
+                placeholder="Event Website or Registration Link" />
+              <label for="eventLink">Event Website/Link</label>
+            </p-floatLabel>
+          </div>
+
+          <!-- Event Tags-->
+          <div class="col-12 md:col-4">
+            <p-floatLabel>
+              <input pInputText id="eventTags" formControlName="eventTags" class="w-full p-inputtext-sm"
+                placeholder="Add event tags (e.g., tech, business)" />
+              <label for="eventTags">Event Tags</label>
+            </p-floatLabel>
+          </div>
+
+          <!-- Event Notifications -->
+          <div class="col-12 md:col-3">
+            <div class="text-center flex align-items-center">
+              <p-inputSwitch formControlName="eventNotifications" tooltipPosition="bottom"
+                pTooltip="Participants will receive an email reminder 1 hour before the event starts"
+                class="p-inputtext-sm"></p-inputSwitch>
+              <label for="eventNotifications" class="text-center ml-3">Enable Notifications</label>
+            </div>
+          </div>
+
+          <!-- Event Description -->
+          <div class="col-12 md:col-6">
+            <p-floatLabel>
+              <textarea pInputTextarea formControlName="eventDescription" [maxlength]="500" rows="4" autoResize="true"
+                class="w-full p-inputtext-sm"></textarea>
+              <label for="eventDescription">Event Description</label>
+            </p-floatLabel>
+            <small>{{
+              fgComponent.get("eventDescription")?.value?.length || 0
+              }}/500</small>
+          </div>
+
+          <div class="col-12 px-4">
+            <app-image-uploader></app-image-uploader>
+          </div>
+
+        </div>
+
+        <!-- Action Buttons -->
+      </div>
+    </p-card>
+  </form>
+  <div class="flex justify-content-end gap-3 mt-4">
+    <p-button label="Cancel" severity="secondary" styleClass="p-button-sm" />
+    <p-button label="Save" styleClass="p-button-sm" />
+  </div>
+</ng-container>
